@@ -1,0 +1,36 @@
+columns;info
+Tournament; Name des Turniers. Innerhalb der Grand Slams nur Australian Open, French Open, Wimbledon und US Open.
+Date; Datum des Matches im Format JJJJ-MM-TT.
+Series; Turnierserie, z. B. Grand Slam, Masters 1000, ATP500. Fuer dieses Projekt wird auf "Grand Slam" gefiltert.
+Court; Austragungsart, Outdoor oder Indoor. In allen Grand-Slam-Matches Outdoor.
+Surface; Belag des Platzes: Hard (Hartplatz), Clay (Sand) oder Grass (Rasen).
+Round; Turnierrunde, von 1st Round ueber Quarterfinals und Semifinals bis The Final.
+Best of; Maximale Anzahl der Saetze. Bei Grand Slams regulaer 5, 23 Matches sind fehlerhaft als 3 kodiert.
+Player_1; Name des ersten Spielers. Die Reihenfolge sagt nichts ueber Spielstaerke oder Ausgang aus.
+Player_2; Name des zweiten Spielers.
+Winner; Name des Siegers. Entspricht immer entweder Player_1 oder Player_2.
+Rank_1; Weltranglistenposition von Player_1 zum Zeitpunkt des Matches. Niedriger ist besser, Rang 1 ist die Spitze.
+Rank_2; Weltranglistenposition von Player_2.
+Pts_1; ATP-Ranglistenpunkte von Player_1. Mehr Punkte bedeuten eine bessere Position. Fehlen von 2000 bis 2005.
+Pts_2; ATP-Ranglistenpunkte von Player_2.
+Odd_1; Buchmacherquote auf einen Sieg von Player_1. Die niedrigere der beiden Quoten kennzeichnet den Favoriten.
+Odd_2; Buchmacherquote auf einen Sieg von Player_2.
+Score; Satzergebnis als Text, z. B. 6-4 3-6 7-5.
+;
+ABGELEITETE SPALTEN; Die folgenden Spalten stehen nicht im Rohdatensatz, sie werden im Notebook erzeugt.
+Year; Jahr des Matches, aus Date abgeleitet (Abschnitt 2.4).
+Rang_Diff; Betrag der Rangdifferenz beider Spieler. Grundlage von H1.
+Fav_Rang; Name des Spielers mit dem besseren, also niedrigeren Rang. Leer, wenn ein Rang fehlt oder beide gleich sind.
+Fav_Rang_Sieg; Hat der Rang-Favorit gewonnen? True, False oder leer. Zielgroesse in H1 bis H4. Der Mittelwert dieser Spalte ist die im Notebook durchgehend verwendete Favoritensiegquote.
+Fav_Quote; Name des Spielers mit der niedrigeren Buchmacherquote. Leer, wenn eine Quote fehlt oder beide gleich sind.
+Fav_Quote_Sieg; Hat der Quoten-Favorit gewonnen? Zielgroesse in H5.
+Fav_Pts; Name des Spielers mit den meisten ATP-Punkten. Nur fuer den Nachweis in Abschnitt 3.5 gebildet.
+Top10_1; Steht Player_1 in den Top 10? True, False oder leer bei fehlendem Rang.
+Top10_2; Steht Player_2 in den Top 10?
+Top10_Sieg; Hat der Top-10-Spieler gewonnen? Nur gefuellt, wenn genau einer der beiden Spieler Top 10 ist. Zielgroesse in H4.
+Top10_Duell; True, wenn genau einer der beiden Spieler Top 10 ist. Hilfsspalte fuer den Vergleich in Abschnitt 3.4.
+Rang_Klasse; Rang_Diff in sechs Klassen zusammengefasst: 1-5, 6-10, 11-20, 21-50, 51-100, 100+ (Abschnitt 3.1).
+Aera; Zeitraum des Matches: vor 2004, 2004-2022 oder ab 2023. Fuer den Aeren-Vergleich in Abschnitt 3.3.
+Rang_Fav; Der bessere, also niedrigere der beiden Raenge. Merkmal des Vorhersagemodells in Kapitel 4.
+Top10_Fav; Steht der Rang-Favorit in den Top 10? Merkmal des Vorhersagemodells in Kapitel 4.
+Top10_Beide; Stehen beide Spieler in den Top 10? Merkmal des Vorhersagemodells in Kapitel 4.
